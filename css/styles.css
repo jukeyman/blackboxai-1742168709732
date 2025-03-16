@@ -1,0 +1,237 @@
+/* Global Styles for Makin A Brand */
+
+/* Typography */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Text Effects */
+.glow-text { 
+    text-shadow: 0 0 10px rgba(0, 224, 255, 0.5);
+    transition: text-shadow 0.3s ease;
+}
+
+.gold-glow { 
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    transition: text-shadow 0.3s ease;
+}
+
+/* Hover Effects */
+.hover-glow:hover {
+    text-shadow: 0 0 15px rgba(0, 224, 255, 0.8);
+}
+
+.hover-gold:hover {
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+}
+
+/* Card Effects */
+.dashboard-card {
+    background: linear-gradient(145deg, rgba(28, 31, 51, 0.9), rgba(0, 0, 0, 0.8));
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+    border-color: rgba(0, 224, 255, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 224, 255, 0.2);
+}
+
+/* Form Elements */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #00E0FF;
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.2);
+}
+
+/* Button Effects */
+.btn-primary {
+    background-color: #D72638;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: rgba(215, 38, 56, 0.9);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid #FFD700;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    border-color: #00E0FF;
+    color: #00E0FF;
+}
+
+/* Navigation Effects */
+.nav-link {
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #00E0FF;
+    transform: translateX(5px);
+}
+
+.nav-link.active {
+    color: #00E0FF;
+    border-left: 4px solid #00E0FF;
+    background-color: rgba(0, 224, 255, 0.1);
+}
+
+/* Upload Zone */
+.upload-zone {
+    border: 2px dashed rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.upload-zone:hover, .upload-zone.drag-over {
+    border-color: rgba(0, 224, 255, 0.5);
+    background: rgba(0, 224, 255, 0.05);
+}
+
+/* Loading States */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease;
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 215, 0, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 224, 255, 0.3);
+}
+
+/* Toast Notifications */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: rgba(28, 31, 51, 0.95);
+    border: 1px solid #FFD700;
+    color: white;
+    z-index: 1000;
+    animation: slideIn 0.3s ease;
+}
+
+.toast.success {
+    border-color: #00E0FF;
+}
+
+.toast.error {
+    border-color: #D72638;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: linear-gradient(145deg, rgba(28, 31, 51, 0.95), rgba(0, 0, 0, 0.9));
+    border: 1px solid #FFD700;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    animation: slideIn 0.3s ease;
+}
+
+/* Progress Bar */
+.progress-bar {
+    height: 4px;
+    background: rgba(255, 215, 0, 0.2);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: #00E0FF;
+    transition: width 0.3s ease;
+}
+
+/* Tooltip */
+.tooltip {
+    position: relative;
+}
+
+.tooltip:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem;
+    background: rgba(28, 31, 51, 0.95);
+    border: 1px solid #FFD700;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    z-index: 1000;
+}
