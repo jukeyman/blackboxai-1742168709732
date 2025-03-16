@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Makin A Brand - Where Entrepreneurs Ignite Their Vision">
+    <title>Makin A Brand - Build Your Empire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-gold': '#FFD700',
+                        'midnight-blue': '#1C1F33',
+                        'electric-aqua': '#00E0FF',
+                        'bold-crimson': '#D72638',
+                        'jet-black': '#000000'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .glow-text { text-shadow: 0 0 10px rgba(0, 224, 255, 0.5); }
+        .gold-glow { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    </style>
+</head>
+<body class="bg-midnight-blue text-white font-[Roboto]">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-gradient-to-b from-midnight-blue to-transparent">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-electric-aqua text-4xl font-bold flex items-center gap-2">
+                <span class="glow-text">Makin A Brand</span>
+            </div>
+            <nav class="flex items-center gap-4">
+                <select class="bg-transparent border border-royal-gold px-4 py-1 rounded text-royal-gold">
+                    <option>English</option>
+                    <option>Spanish</option>
+                </select>
+                <div id="authButtons">
+                    <a href="/pages/auth/login.html" class="bg-bold-crimson px-6 py-2 rounded hover:bg-opacity-90 transition-all duration-300">Sign In</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen bg-gradient-to-b from-midnight-blue to-jet-black relative">
+        <div class="absolute inset-0 bg-midnight-blue bg-opacity-60"></div>
+        <div class="relative z-10 container mx-auto px-4 h-screen flex flex-col justify-center items-center text-center">
+            <h1 class="text-6xl font-bold mb-5 gold-glow">Unlimited Growth. Unstoppable Passion. Epic Branding.</h1>
+            <p class="text-2xl mb-5 glow-text">Build your empire anywhere. Scale your impact anytime.</p>
+            <p class="text-xl mb-8">Ready to level up your brand? Enter your email to kickstart your journey or reboot your brand's legacy.</p>
+            <form id="heroForm" class="flex gap-2">
+                <input type="email" name="email" placeholder="Email address" required
+                    class="px-4 py-3 min-w-[400px] bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                <button type="submit" 
+                    class="bg-bold-crimson px-6 py-3 rounded text-xl flex items-center hover:bg-opacity-90 transition-all duration-300">
+                    Get Started
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 border-t-8 border-royal-gold bg-gradient-to-b from-jet-black to-midnight-blue">
+        <div class="container mx-auto px-4 flex items-center">
+            <div class="flex-1">
+                <h2 class="text-5xl font-bold mb-5 gold-glow">Elevate Everywhere</h2>
+                <p class="text-2xl glow-text">Access Your Brand-Building Toolbox: Whether you're on your desktop, smartphone, or tablet, Makin A Brand gives you the power to dominate the market on any device.</p>
+            </div>
+            <div class="flex-1 relative">
+                <div class="absolute inset-0 bg-electric-aqua opacity-10 rounded-lg"></div>
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="TV" class="w-full relative z-10">
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Feature -->
+    <section class="py-16 border-t-8 border-royal-gold bg-gradient-to-b from-midnight-blue to-jet-black">
+        <div class="container mx-auto px-4 flex items-center">
+            <div class="flex-1 relative">
+                <div class="absolute inset-0 bg-royal-gold opacity-10 rounded-lg"></div>
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="Mobile" class="w-full relative z-10">
+            </div>
+            <div class="flex-1">
+                <h2 class="text-5xl font-bold mb-5 gold-glow">Download & Dominate</h2>
+                <p class="text-2xl glow-text">Your Strategy, Anytime: Download expert guides, killer templates, and actionable insights—so you're always ready to take your business offline and on the go.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Watch Everywhere Feature -->
+    <section class="py-16 border-t-8 border-royal-gold bg-gradient-to-b from-jet-black to-midnight-blue">
+        <div class="container mx-auto px-4 flex items-center">
+            <div class="flex-1">
+                <h2 class="text-5xl font-bold mb-5 gold-glow">Brand Everywhere</h2>
+                <p class="text-2xl glow-text">Your Success, Streamed: From quick strategy sessions to deep-dive growth hacks, access premium content and live events on your phone, tablet, laptop, or desktop. Your brand never stops—neither should you.</p>
+            </div>
+            <div class="flex-1 relative">
+                <div class="absolute inset-0 bg-electric-aqua opacity-10 rounded-lg"></div>
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/device-pile.png" alt="Devices" class="w-full relative z-10">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 border-t-8 border-royal-gold bg-gradient-to-b from-midnight-blue to-jet-black">
+        <div class="container mx-auto px-4">
+            <h2 class="text-5xl font-bold text-center mb-8 gold-glow">Need Answers?</h2>
+            <div class="max-w-4xl mx-auto space-y-3">
+                <div class="faq-item bg-midnight-blue cursor-pointer border border-royal-gold rounded-lg hover:border-electric-aqua transition-all duration-300">
+                    <div class="p-6 flex justify-between items-center">
+                        <h3 class="text-2xl glow-text">What is Makin A Brand?</h3>
+                        <i class="fas fa-plus text-2xl text-royal-gold"></i>
+                    </div>
+                    <div class="answer hidden p-6 bg-opacity-50">
+                        <p class="text-xl">Your all-in-one platform for building, scaling, and owning your market.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-midnight-blue cursor-pointer border border-royal-gold rounded-lg hover:border-electric-aqua transition-all duration-300">
+                    <div class="p-6 flex justify-between items-center">
+                        <h3 class="text-2xl glow-text">How much does it cost?</h3>
+                        <i class="fas fa-plus text-2xl text-royal-gold"></i>
+                    </div>
+                    <div class="answer hidden p-6 bg-opacity-50">
+                        <p class="text-xl">Flexible plans designed to fit every entrepreneur's hustle.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-midnight-blue cursor-pointer border border-royal-gold rounded-lg hover:border-electric-aqua transition-all duration-300">
+                    <div class="p-6 flex justify-between items-center">
+                        <h3 class="text-2xl glow-text">Where can I access it?</h3>
+                        <i class="fas fa-plus text-2xl text-royal-gold"></i>
+                    </div>
+                    <div class="answer hidden p-6 bg-opacity-50">
+                        <p class="text-xl">Anytime, anywhere—on every device you love.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 text-gray-400 border-t-8 border-royal-gold bg-jet-black">
+        <div class="container mx-auto px-4">
+            <p class="mb-8 glow-text">Questions? Call 1-866-763-8003</p>
+            <div class="grid grid-cols-4 gap-8">
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">FAQ</a></li>
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">Investor Insights</a></li>
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">Privacy</a></li>
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">Performance Check</a></li>
+                </ul>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">Help Center</a></li>
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">Careers</a></li>
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">Cookie Preferences</a></li>
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">Legal Notices</a></li>
+                </ul>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">My Account</a></li>
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">Access Options</a></li>
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">Corporate Info</a></li>
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">Exclusively on Makin A Brand</a></li>
+                </ul>
+                <ul class="space-y-3">
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">Media Hub</a></li>
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">Terms of Use</a></li>
+                    <li><a href="#" class="hover:text-electric-aqua transition-colors duration-300">Contact Us</a></li>
+                </ul>
+            </div>
+            <p class="mt-8 gold-glow">&copy; 2025 Makin A Brand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="/js/scripts.js"></script>
+    <script>
+        // Handle FAQ toggles
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const answer = this.querySelector('.answer');
+                const icon = this.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('fa-plus');
+                icon.classList.toggle('fa-minus');
+            });
+        });
+
+        // Handle hero form submission
+        document.getElementById('heroForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            window.location.href = `/pages/auth/register.html?email=${encodeURIComponent(email)}`;
+        });
+
+        // Check if user is already logged in and update UI
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = localStorage.getItem('user');
+            const authButtons = document.getElementById('authButtons');
+            
+            if (user) {
+                const userData = JSON.parse(user);
+                authButtons.innerHTML = `
+                    <div class="flex items-center gap-4">
+                        <a href="/pages/dashboard/index.html" class="text-electric-aqua hover:text-royal-gold transition-colors duration-300">
+                            Dashboard
+                        </a>
+                        <button onclick="window.makinABrand.auth.logout()" class="bg-bold-crimson px-6 py-2 rounded hover:bg-opacity-90 transition-all duration-300">
+                            Sign Out
+                        </button>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
