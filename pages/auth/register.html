@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for Makin A Brand - Start Building Your Empire">
+    <title>Register - Makin A Brand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-gold': '#FFD700',
+                        'midnight-blue': '#1C1F33',
+                        'electric-aqua': '#00E0FF',
+                        'bold-crimson': '#D72638',
+                        'jet-black': '#000000'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .glow-text { text-shadow: 0 0 10px rgba(0, 224, 255, 0.5); }
+        .gold-glow { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    </style>
+</head>
+<body class="bg-midnight-blue text-white font-[Roboto] min-h-screen">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-gradient-to-b from-midnight-blue to-transparent">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-electric-aqua text-4xl font-bold flex items-center gap-2">
+                <span class="glow-text">Makin A Brand</span>
+            </a>
+            <nav class="flex items-center gap-4">
+                <select class="bg-transparent border border-royal-gold px-4 py-1 rounded text-royal-gold">
+                    <option>English</option>
+                    <option>Spanish</option>
+                </select>
+                <a href="/pages/auth/login.html" class="bg-bold-crimson px-6 py-2 rounded hover:bg-opacity-90 transition-all duration-300">Sign In</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Registration Form Section -->
+    <main class="container mx-auto px-4 pt-32 pb-16 flex justify-center items-center min-h-screen">
+        <div class="max-w-md w-full bg-gradient-to-b from-midnight-blue to-jet-black p-8 rounded-lg border border-royal-gold">
+            <h1 class="text-3xl font-bold mb-6 text-center gold-glow">Start Your Journey</h1>
+            <form id="registerForm" class="space-y-6">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="firstName" class="block text-sm font-medium text-electric-aqua mb-2">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required 
+                            class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                    </div>
+                    <div>
+                        <label for="lastName" class="block text-sm font-medium text-electric-aqua mb-2">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required 
+                            class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-electric-aqua mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" required 
+                        class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium text-electric-aqua mb-2">Password</label>
+                    <div class="relative">
+                        <input type="password" id="password" name="password" required 
+                            class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                        <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-royal-gold hover:text-electric-aqua transition-colors duration-300" onclick="togglePassword('password')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <label for="confirmPassword" class="block text-sm font-medium text-electric-aqua mb-2">Confirm Password</label>
+                    <div class="relative">
+                        <input type="password" id="confirmPassword" name="confirmPassword" required 
+                            class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                        <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-royal-gold hover:text-electric-aqua transition-colors duration-300" onclick="togglePassword('confirmPassword')">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <label for="businessType" class="block text-sm font-medium text-electric-aqua mb-2">Business Type</label>
+                    <select id="businessType" name="businessType" required 
+                        class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                        <option value="">Select your business type</option>
+                        <option value="startup">Startup</option>
+                        <option value="smallBusiness">Small Business</option>
+                        <option value="enterprise">Enterprise</option>
+                        <option value="freelancer">Freelancer</option>
+                    </select>
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="terms" name="terms" required 
+                        class="h-4 w-4 bg-black border-royal-gold rounded focus:ring-electric-aqua">
+                    <label for="terms" class="ml-2 block text-sm text-royal-gold">
+                        I agree to the <a href="/pages/static/terms.html" class="text-electric-aqua hover:text-royal-gold transition-colors duration-300">Terms of Service</a> and 
+                        <a href="/pages/static/privacy.html" class="text-electric-aqua hover:text-royal-gold transition-colors duration-300">Privacy Policy</a>
+                    </label>
+                </div>
+                <button type="submit" 
+                    class="w-full bg-bold-crimson text-white py-3 px-4 rounded hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center">
+                    <span>Create Account</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </button>
+            </form>
+            <div class="mt-6 text-center">
+                <p class="text-gray-400">Already have an account? 
+                    <a href="/pages/auth/login.html" class="text-electric-aqua hover:text-royal-gold transition-colors duration-300">Sign in</a>
+                </p>
+            </div>
+            <div class="mt-6 pt-6 border-t border-gray-700">
+                <p class="text-center text-sm text-gray-400 mb-4">Or register with</p>
+                <div class="grid grid-cols-3 gap-4">
+                    <button class="flex items-center justify-center py-2 px-4 border border-royal-gold rounded hover:border-electric-aqua transition-all duration-300">
+                        <i class="fab fa-google text-xl"></i>
+                    </button>
+                    <button class="flex items-center justify-center py-2 px-4 border border-royal-gold rounded hover:border-electric-aqua transition-all duration-300">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </button>
+                    <button class="flex items-center justify-center py-2 px-4 border border-royal-gold rounded hover:border-electric-aqua transition-all duration-300">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center text-gray-400 border-t border-gray-800">
+        <p>&copy; 2025 Makin A Brand. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function togglePassword(inputId) {
+            const passwordInput = document.getElementById(inputId);
+            const eyeIcon = passwordInput.nextElementSibling.querySelector('i');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic password validation
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            // Here you would typically handle the registration logic
+            alert('Registration functionality will be implemented in the next phase.');
+        });
+    </script>
+</body>
+</html>
