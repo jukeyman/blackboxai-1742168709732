@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Makin A Brand Dashboard - Manage Your Brand Empire">
+    <title>Dashboard - Makin A Brand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-gold': '#FFD700',
+                        'midnight-blue': '#1C1F33',
+                        'electric-aqua': '#00E0FF',
+                        'bold-crimson': '#D72638',
+                        'jet-black': '#000000'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .glow-text { text-shadow: 0 0 10px rgba(0, 224, 255, 0.5); }
+        .gold-glow { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+        .dashboard-card {
+            background: linear-gradient(145deg, rgba(28, 31, 51, 0.9), rgba(0, 0, 0, 0.8));
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .dashboard-card:hover {
+            border-color: rgba(0, 224, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 224, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-midnight-blue text-white font-[Roboto]">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-jet-black border-r border-royal-gold/20">
+            <div class="p-6">
+                <a href="/" class="text-electric-aqua text-2xl font-bold flex items-center gap-2">
+                    <span class="glow-text">Makin A Brand</span>
+                </a>
+            </div>
+            <nav class="mt-6">
+                <div class="px-4 py-2">
+                    <h2 class="text-royal-gold text-xs uppercase tracking-wider">Main</h2>
+                </div>
+                <a href="/pages/dashboard/index.html" class="flex items-center px-6 py-3 text-electric-aqua bg-midnight-blue border-l-4 border-electric-aqua">
+                    <i class="fas fa-home mr-3"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="/pages/dashboard/analytics.html" class="flex items-center px-6 py-3 text-gray-400 hover:text-electric-aqua hover:bg-midnight-blue/50 transition-all duration-300">
+                    <i class="fas fa-chart-line mr-3"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="/pages/dashboard/content.html" class="flex items-center px-6 py-3 text-gray-400 hover:text-electric-aqua hover:bg-midnight-blue/50 transition-all duration-300">
+                    <i class="fas fa-film mr-3"></i>
+                    <span>Content</span>
+                </a>
+                <div class="px-4 py-2 mt-6">
+                    <h2 class="text-royal-gold text-xs uppercase tracking-wider">Account</h2>
+                </div>
+                <a href="/pages/dashboard/profile.html" class="flex items-center px-6 py-3 text-gray-400 hover:text-electric-aqua hover:bg-midnight-blue/50 transition-all duration-300">
+                    <i class="fas fa-user mr-3"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="/pages/dashboard/settings.html" class="flex items-center px-6 py-3 text-gray-400 hover:text-electric-aqua hover:bg-midnight-blue/50 transition-all duration-300">
+                    <i class="fas fa-cog mr-3"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <!-- Top Navigation -->
+            <header class="bg-jet-black border-b border-royal-gold/20 p-4">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h1 class="text-2xl font-bold gold-glow">Dashboard Overview</h1>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button class="text-gray-400 hover:text-electric-aqua">
+                            <i class="fas fa-bell text-xl"></i>
+                        </button>
+                        <div class="relative">
+                            <button class="flex items-center gap-2 text-gray-400 hover:text-electric-aqua">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=1C1F33&color=00E0FF" 
+                                    alt="Profile" class="w-8 h-8 rounded-full border border-royal-gold">
+                                <span>John Doe</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="p-6">
+                <!-- Stats Overview -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="dashboard-card rounded-lg p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400">Total Views</p>
+                                <h3 class="text-3xl font-bold text-electric-aqua">24.5K</h3>
+                            </div>
+                            <div class="text-royal-gold">
+                                <i class="fas fa-eye text-3xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-green-500 mt-2">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>12% increase</span>
+                        </p>
+                    </div>
+
+                    <div class="dashboard-card rounded-lg p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400">Engagement Rate</p>
+                                <h3 class="text-3xl font-bold text-electric-aqua">8.2%</h3>
+                            </div>
+                            <div class="text-royal-gold">
+                                <i class="fas fa-chart-line text-3xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-green-500 mt-2">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>5% increase</span>
+                        </p>
+                    </div>
+
+                    <div class="dashboard-card rounded-lg p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400">Total Followers</p>
+                                <h3 class="text-3xl font-bold text-electric-aqua">12.8K</h3>
+                            </div>
+                            <div class="text-royal-gold">
+                                <i class="fas fa-users text-3xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-green-500 mt-2">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>18% increase</span>
+                        </p>
+                    </div>
+
+                    <div class="dashboard-card rounded-lg p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-gray-400">Revenue</p>
+                                <h3 class="text-3xl font-bold text-electric-aqua">$15.2K</h3>
+                            </div>
+                            <div class="text-royal-gold">
+                                <i class="fas fa-dollar-sign text-3xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-green-500 mt-2">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>25% increase</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Recent Activity & Quick Actions -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <!-- Recent Activity -->
+                    <div class="dashboard-card rounded-lg p-6">
+                        <h2 class="text-xl font-bold mb-4 gold-glow">Recent Activity</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-electric-aqua/20 flex items-center justify-center">
+                                    <i class="fas fa-video text-electric-aqua"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white">New video uploaded</p>
+                                    <p class="text-gray-400 text-sm">2 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-royal-gold/20 flex items-center justify-center">
+                                    <i class="fas fa-comment text-royal-gold"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white">New comment on your post</p>
+                                    <p class="text-gray-400 text-sm">4 hours ago</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-full bg-bold-crimson/20 flex items-center justify-center">
+                                    <i class="fas fa-heart text-bold-crimson"></i>
+                                </div>
+                                <div>
+                                    <p class="text-white">Reached 1000 likes</p>
+                                    <p class="text-gray-400 text-sm">1 day ago</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="dashboard-card rounded-lg p-6">
+                        <h2 class="text-xl font-bold mb-4 gold-glow">Quick Actions</h2>
+                        <div class="grid grid-cols-2 gap-4">
+                            <button class="p-4 bg-electric-aqua/10 rounded-lg hover:bg-electric-aqua/20 transition-all duration-300">
+                                <i class="fas fa-upload text-2xl text-electric-aqua mb-2"></i>
+                                <p class="text-white">Upload Content</p>
+                            </button>
+                            <button class="p-4 bg-royal-gold/10 rounded-lg hover:bg-royal-gold/20 transition-all duration-300">
+                                <i class="fas fa-edit text-2xl text-royal-gold mb-2"></i>
+                                <p class="text-white">Create Post</p>
+                            </button>
+                            <button class="p-4 bg-bold-crimson/10 rounded-lg hover:bg-bold-crimson/20 transition-all duration-300">
+                                <i class="fas fa-chart-bar text-2xl text-bold-crimson mb-2"></i>
+                                <p class="text-white">View Analytics</p>
+                            </button>
+                            <button class="p-4 bg-electric-aqua/10 rounded-lg hover:bg-electric-aqua/20 transition-all duration-300">
+                                <i class="fas fa-cog text-2xl text-electric-aqua mb-2"></i>
+                                <p class="text-white">Settings</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Content -->
+                <div class="dashboard-card rounded-lg p-6">
+                    <h2 class="text-xl font-bold mb-4 gold-glow">Recent Content</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="text-left border-b border-royal-gold/20">
+                                    <th class="pb-4 text-royal-gold">Title</th>
+                                    <th class="pb-4 text-royal-gold">Type</th>
+                                    <th class="pb-4 text-royal-gold">Views</th>
+                                    <th class="pb-4 text-royal-gold">Engagement</th>
+                                    <th class="pb-4 text-royal-gold">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-400">
+                                <tr class="border-b border-royal-gold/10">
+                                    <td class="py-4">Brand Story Video</td>
+                                    <td class="py-4"><span class="px-2 py-1 bg-electric-aqua/20 text-electric-aqua rounded">Video</span></td>
+                                    <td class="py-4">5.2K</td>
+                                    <td class="py-4">
+                                        <div class="flex items-center">
+                                            <div class="w-16 bg-gray-700 rounded-full h-2">
+                                                <div class="bg-electric-aqua rounded-full h-2 w-3/4"></div>
+                                            </div>
+                                            <span class="ml-2">75%</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4">
+                                        <button class="text-electric-aqua hover:text-royal-gold transition-colors duration-300">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr class="border-b border-royal-gold/10">
+                                    <td class="py-4">Product Launch</td>
+                                    <td class="py-4"><span class="px-2 py-1 bg-royal-gold/20 text-royal-gold rounded">Post</span></td>
+                                    <td class="py-4">3.8K</td>
+                                    <td class="py-4">
+                                        <div class="flex items-center">
+                                            <div class="w-16 bg-gray-700 rounded-full h-2">
+                                                <div class="bg-electric-aqua rounded-full h-2 w-1/2"></div>
+                                            </div>
+                                            <span class="ml-2">50%</span>
+                                        </div>
+                                    </td>
+                                    <td class="py-4">
+                                        <button class="text-electric-aqua hover:text-royal-gold transition-colors duration-300">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Dashboard Interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Profile Dropdown
+            const profileButton = document.querySelector('button:has(img)');
+            if (profileButton) {
+                profileButton.addEventListener('click', function() {
+                    // Implement dropdown menu
+                });
+            }
+
+            // Quick Action Buttons
+            const quickActionButtons = document.querySelectorAll('.dashboard-card button');
+            quickActionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Implement quick action functionality
+                    console.log('Quick action clicked:', this.textContent.trim());
+                });
+            });
+
+            // Content Table Actions
+            const actionButtons = document.querySelectorAll('table button');
+            actionButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Implement content action menu
+                    console.log('Content action clicked');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
