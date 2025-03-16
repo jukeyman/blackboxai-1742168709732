@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Makin A Brand Profile - Manage Your Account">
+    <title>Profile - Makin A Brand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-gold': '#FFD700',
+                        'midnight-blue': '#1C1F33',
+                        'electric-aqua': '#00E0FF',
+                        'bold-crimson': '#D72638',
+                        'jet-black': '#000000'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .glow-text { text-shadow: 0 0 10px rgba(0, 224, 255, 0.5); }
+        .gold-glow { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+        .dashboard-card {
+            background: linear-gradient(145deg, rgba(28, 31, 51, 0.9), rgba(0, 0, 0, 0.8));
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .dashboard-card:hover {
+            border-color: rgba(0, 224, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 224, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-midnight-blue text-white font-[Roboto]">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-jet-black border-r border-royal-gold/20">
+            <div class="p-6">
+                <a href="/" class="text-electric-aqua text-2xl font-bold flex items-center gap-2">
+                    <span class="glow-text">Makin A Brand</span>
+                </a>
+            </div>
+            <nav class="mt-6">
+                <div class="px-4 py-2">
+                    <h2 class="text-royal-gold text-xs uppercase tracking-wider">Main</h2>
+                </div>
+                <a href="/pages/dashboard/index.html" class="flex items-center px-6 py-3 text-gray-400 hover:text-electric-aqua hover:bg-midnight-blue/50 transition-all duration-300">
+                    <i class="fas fa-home mr-3"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="/pages/dashboard/analytics.html" class="flex items-center px-6 py-3 text-gray-400 hover:text-electric-aqua hover:bg-midnight-blue/50 transition-all duration-300">
+                    <i class="fas fa-chart-line mr-3"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="/pages/dashboard/content.html" class="flex items-center px-6 py-3 text-gray-400 hover:text-electric-aqua hover:bg-midnight-blue/50 transition-all duration-300">
+                    <i class="fas fa-film mr-3"></i>
+                    <span>Content</span>
+                </a>
+                <div class="px-4 py-2 mt-6">
+                    <h2 class="text-royal-gold text-xs uppercase tracking-wider">Account</h2>
+                </div>
+                <a href="/pages/dashboard/profile.html" class="flex items-center px-6 py-3 text-electric-aqua bg-midnight-blue border-l-4 border-electric-aqua">
+                    <i class="fas fa-user mr-3"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="/pages/dashboard/settings.html" class="flex items-center px-6 py-3 text-gray-400 hover:text-electric-aqua hover:bg-midnight-blue/50 transition-all duration-300">
+                    <i class="fas fa-cog mr-3"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <!-- Top Navigation -->
+            <header class="bg-jet-black border-b border-royal-gold/20 p-4">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h1 class="text-2xl font-bold gold-glow">Profile Settings</h1>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <button class="bg-bold-crimson px-6 py-2 rounded hover:bg-opacity-90 transition-all duration-300">
+                            Save Changes
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Profile Content -->
+            <div class="p-6">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Profile Header -->
+                    <div class="dashboard-card rounded-lg p-6 mb-8">
+                        <div class="flex items-center gap-6">
+                            <div class="relative">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=1C1F33&color=00E0FF" 
+                                    alt="Profile" class="w-24 h-24 rounded-full border-2 border-royal-gold">
+                                <button class="absolute bottom-0 right-0 bg-electric-aqua w-8 h-8 rounded-full flex items-center justify-center hover:bg-opacity-90 transition-all duration-300">
+                                    <i class="fas fa-camera"></i>
+                                </button>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold mb-2">John Doe</h2>
+                                <p class="text-gray-400">Brand Strategist & Content Creator</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="dashboard-card rounded-lg p-6 mb-8">
+                        <h3 class="text-xl font-bold mb-6 gold-glow">Personal Information</h3>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-electric-aqua mb-2">First Name</label>
+                                <input type="text" value="John" 
+                                    class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-electric-aqua mb-2">Last Name</label>
+                                <input type="text" value="Doe" 
+                                    class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-electric-aqua mb-2">Email Address</label>
+                                <input type="email" value="john.doe@example.com" 
+                                    class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-electric-aqua mb-2">Phone Number</label>
+                                <input type="tel" value="+1 (555) 123-4567" 
+                                    class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Information -->
+                    <div class="dashboard-card rounded-lg p-6 mb-8">
+                        <h3 class="text-xl font-bold mb-6 gold-glow">Business Information</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-electric-aqua mb-2">Company Name</label>
+                                <input type="text" value="Makin A Brand LLC" 
+                                    class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-electric-aqua mb-2">Business Type</label>
+                                <select class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                                    <option>Brand Strategy</option>
+                                    <option>Marketing Agency</option>
+                                    <option>Content Creation</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-electric-aqua mb-2">Business Description</label>
+                                <textarea rows="4" 
+                                    class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">Helping businesses build and scale their brand presence through strategic content and marketing solutions.</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="dashboard-card rounded-lg p-6 mb-8">
+                        <h3 class="text-xl font-bold mb-6 gold-glow">Social Media Links</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <i class="fab fa-linkedin text-2xl text-royal-gold w-8"></i>
+                                <input type="url" placeholder="LinkedIn Profile URL" 
+                                    class="flex-1 px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <i class="fab fa-twitter text-2xl text-royal-gold w-8"></i>
+                                <input type="url" placeholder="Twitter Profile URL" 
+                                    class="flex-1 px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <i class="fab fa-instagram text-2xl text-royal-gold w-8"></i>
+                                <input type="url" placeholder="Instagram Profile URL" 
+                                    class="flex-1 px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Settings -->
+                    <div class="dashboard-card rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-6 gold-glow">Security Settings</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-electric-aqua mb-2">Current Password</label>
+                                <input type="password" placeholder="Enter current password" 
+                                    class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-electric-aqua mb-2">New Password</label>
+                                <input type="password" placeholder="Enter new password" 
+                                    class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-electric-aqua mb-2">Confirm New Password</label>
+                                <input type="password" placeholder="Confirm new password" 
+                                    class="w-full px-4 py-3 bg-black bg-opacity-50 border border-royal-gold rounded text-white focus:border-electric-aqua transition-all duration-300">
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <button class="bg-bold-crimson px-6 py-2 rounded hover:bg-opacity-90 transition-all duration-300">
+                                    Update Password
+                                </button>
+                                <a href="#" class="text-electric-aqua hover:text-royal-gold transition-colors duration-300">
+                                    Forgot Password?
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Profile Image Upload
+            const profileImageBtn = document.querySelector('.fa-camera').parentElement;
+            profileImageBtn.addEventListener('click', function() {
+                // Implement image upload functionality
+                console.log('Upload profile image');
+            });
+
+            // Form Submission
+            const saveChangesBtn = document.querySelector('button.bg-bold-crimson');
+            if (saveChangesBtn) {
+                saveChangesBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Implement save changes functionality
+                    console.log('Saving profile changes');
+                    // Show success message
+                    alert('Profile changes saved successfully!');
+                });
+            }
+
+            // Password Update
+            const updatePasswordBtn = document.querySelector('button:contains("Update Password")');
+            if (updatePasswordBtn) {
+                updatePasswordBtn.addEventListener('click', function() {
+                    // Implement password update functionality
+                    console.log('Updating password');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
