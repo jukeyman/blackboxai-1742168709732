@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Makin A Brand Analytics - Track Your Brand's Performance">
+    <title>Analytics - Makin A Brand</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-gold': '#FFD700',
+                        'midnight-blue': '#1C1F33',
+                        'electric-aqua': '#00E0FF',
+                        'bold-crimson': '#D72638',
+                        'jet-black': '#000000'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Include Chart.js for analytics graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .glow-text { text-shadow: 0 0 10px rgba(0, 224, 255, 0.5); }
+        .gold-glow { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+        .dashboard-card {
+            background: linear-gradient(145deg, rgba(28, 31, 51, 0.9), rgba(0, 0, 0, 0.8));
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        .dashboard-card:hover {
+            border-color: rgba(0, 224, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 224, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-midnight-blue text-white font-[Roboto]">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-jet-black border-r border-royal-gold/20">
+            <div class="p-6">
+                <a href="/" class="text-electric-aqua text-2xl font-bold flex items-center gap-2">
+                    <span class="glow-text">Makin A Brand</span>
+                </a>
+            </div>
+            <nav class="mt-6">
+                <div class="px-4 py-2">
+                    <h2 class="text-royal-gold text-xs uppercase tracking-wider">Main</h2>
+                </div>
+                <a href="/pages/dashboard/index.html" class="flex items-center px-6 py-3 text-gray-400 hover:text-electric-aqua hover:bg-midnight-blue/50 transition-all duration-300">
+                    <i class="fas fa-home mr-3"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="/pages/dashboard/analytics.html" class="flex items-center px-6 py-3 text-electric-aqua bg-midnight-blue border-l-4 border-electric-aqua">
+                    <i class="fas fa-chart-line mr-3"></i>
+                    <span>Analytics</span>
+                </a>
+                <a href="/pages/dashboard/content.html" class="flex items-center px-6 py-3 text-gray-400 hover:text-electric-aqua hover:bg-midnight-blue/50 transition-all duration-300">
+                    <i class="fas fa-film mr-3"></i>
+                    <span>Content</span>
+                </a>
+                <div class="px-4 py-2 mt-6">
+                    <h2 class="text-royal-gold text-xs uppercase tracking-wider">Account</h2>
+                </div>
+                <a href="/pages/dashboard/profile.html" class="flex items-center px-6 py-3 text-gray-400 hover:text-electric-aqua hover:bg-midnight-blue/50 transition-all duration-300">
+                    <i class="fas fa-user mr-3"></i>
+                    <span>Profile</span>
+                </a>
+                <a href="/pages/dashboard/settings.html" class="flex items-center px-6 py-3 text-gray-400 hover:text-electric-aqua hover:bg-midnight-blue/50 transition-all duration-300">
+                    <i class="fas fa-cog mr-3"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <!-- Top Navigation -->
+            <header class="bg-jet-black border-b border-royal-gold/20 p-4">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h1 class="text-2xl font-bold gold-glow">Analytics Overview</h1>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <!-- Date Range Selector -->
+                        <select class="bg-transparent border border-royal-gold px-4 py-2 rounded text-royal-gold">
+                            <option>Last 7 Days</option>
+                            <option>Last 30 Days</option>
+                            <option>Last 90 Days</option>
+                            <option>Custom Range</option>
+                        </select>
+                        <!-- Profile -->
+                        <div class="relative">
+                            <button class="flex items-center gap-2 text-gray-400 hover:text-electric-aqua">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=1C1F33&color=00E0FF" 
+                                    alt="Profile" class="w-8 h-8 rounded-full border border-royal-gold">
+                                <span>John Doe</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Analytics Content -->
+            <div class="p-6">
+                <!-- Performance Overview -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div class="dashboard-card rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-gray-400">Views Growth</p>
+                                <h3 class="text-3xl font-bold text-electric-aqua">+45%</h3>
+                            </div>
+                            <div class="text-royal-gold">
+                                <i class="fas fa-chart-line text-3xl"></i>
+                            </div>
+                        </div>
+                        <canvas id="viewsChart" height="60"></canvas>
+                    </div>
+
+                    <div class="dashboard-card rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-gray-400">Engagement Rate</p>
+                                <h3 class="text-3xl font-bold text-electric-aqua">8.2%</h3>
+                            </div>
+                            <div class="text-royal-gold">
+                                <i class="fas fa-users text-3xl"></i>
+                            </div>
+                        </div>
+                        <canvas id="engagementChart" height="60"></canvas>
+                    </div>
+
+                    <div class="dashboard-card rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-gray-400">Conversion Rate</p>
+                                <h3 class="text-3xl font-bold text-electric-aqua">3.8%</h3>
+                            </div>
+                            <div class="text-royal-gold">
+                                <i class="fas fa-exchange-alt text-3xl"></i>
+                            </div>
+                        </div>
+                        <canvas id="conversionChart" height="60"></canvas>
+                    </div>
+
+                    <div class="dashboard-card rounded-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <p class="text-gray-400">Revenue Growth</p>
+                                <h3 class="text-3xl font-bold text-electric-aqua">+32%</h3>
+                            </div>
+                            <div class="text-royal-gold">
+                                <i class="fas fa-dollar-sign text-3xl"></i>
+                            </div>
+                        </div>
+                        <canvas id="revenueChart" height="60"></canvas>
+                    </div>
+                </div>
+
+                <!-- Detailed Analytics -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <!-- Traffic Sources -->
+                    <div class="dashboard-card rounded-lg p-6">
+                        <h2 class="text-xl font-bold mb-6 gold-glow">Traffic Sources</h2>
+                        <canvas id="trafficSourcesChart" height="300"></canvas>
+                    </div>
+
+                    <!-- Audience Demographics -->
+                    <div class="dashboard-card rounded-lg p-6">
+                        <h2 class="text-xl font-bold mb-6 gold-glow">Audience Demographics</h2>
+                        <canvas id="demographicsChart" height="300"></canvas>
+                    </div>
+                </div>
+
+                <!-- Content Performance -->
+                <div class="dashboard-card rounded-lg p-6">
+                    <h2 class="text-xl font-bold mb-6 gold-glow">Content Performance</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="text-left border-b border-royal-gold/20">
+                                    <th class="pb-4 text-royal-gold">Content</th>
+                                    <th class="pb-4 text-royal-gold">Views</th>
+                                    <th class="pb-4 text-royal-gold">Engagement</th>
+                                    <th class="pb-4 text-royal-gold">Conversion</th>
+                                    <th class="pb-4 text-royal-gold">Revenue</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-400">
+                                <tr class="border-b border-royal-gold/10">
+                                    <td class="py-4">Brand Story Video</td>
+                                    <td class="py-4">15.2K</td>
+                                    <td class="py-4">8.5%</td>
+                                    <td class="py-4">4.2%</td>
+                                    <td class="py-4">$2,450</td>
+                                </tr>
+                                <tr class="border-b border-royal-gold/10">
+                                    <td class="py-4">Product Launch</td>
+                                    <td class="py-4">12.8K</td>
+                                    <td class="py-4">7.8%</td>
+                                    <td class="py-4">3.9%</td>
+                                    <td class="py-4">$1,850</td>
+                                </tr>
+                                <tr class="border-b border-royal-gold/10">
+                                    <td class="py-4">Tutorial Series</td>
+                                    <td class="py-4">9.5K</td>
+                                    <td class="py-4">9.2%</td>
+                                    <td class="py-4">5.1%</td>
+                                    <td class="py-4">$3,200</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Chart.js Configuration
+        Chart.defaults.color = '#ffffff';
+        Chart.defaults.borderColor = 'rgba(255, 215, 0, 0.1)';
+
+        // Helper function to create gradient
+        function createGradient(ctx, color) {
+            const gradient = ctx.createLinearGradient(0, 0, 0, 60);
+            gradient.addColorStop(0, color);
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+            return gradient;
+        }
+
+        // Initialize charts when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Views Chart
+            const viewsCtx = document.getElementById('viewsChart').getContext('2d');
+            new Chart(viewsCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        data: [10, 15, 13, 18, 21, 25, 30],
+                        borderColor: '#00E0FF',
+                        backgroundColor: createGradient(viewsCtx, 'rgba(0, 224, 255, 0.2)'),
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    plugins: { legend: { display: false } },
+                    scales: { x: { display: false }, y: { display: false } }
+                }
+            });
+
+            // Traffic Sources Chart
+            const trafficCtx = document.getElementById('trafficSourcesChart').getContext('2d');
+            new Chart(trafficCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Social Media', 'Direct', 'Search', 'Referral'],
+                    datasets: [{
+                        data: [40, 25, 20, 15],
+                        backgroundColor: ['#00E0FF', '#FFD700', '#D72638', '#1C1F33']
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: { color: '#ffffff' }
+                        }
+                    }
+                }
+            });
+
+            // Demographics Chart
+            const demoCtx = document.getElementById('demographicsChart').getContext('2d');
+            new Chart(demoCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['18-24', '25-34', '35-44', '45-54', '55+'],
+                    datasets: [{
+                        label: 'Age Distribution',
+                        data: [15, 30, 25, 18, 12],
+                        backgroundColor: '#00E0FF'
+                    }]
+                },
+                options: {
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: 'rgba(255, 215, 0, 0.1)'
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Initialize other charts similarly...
+        });
+    </script>
+</body>
+</html>
